@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 // Dizi Toplamı: Bir tamsayı dizisinin tüm elemanlarının toplamını bulan bir Java metodunu yazın.
 
 /*public class Main{
@@ -27,7 +25,7 @@ import java.util.Scanner;
 
 // Dizi Ortalaması:Bir double dizisinin değerlerinin ortalamasını hesaplayan bir Java programı yazın
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
 
@@ -56,4 +54,43 @@ public class Main{
 
         return toplam / dizi.length;
     }
+}*/
+
+//Dizi Ters Çevirme: Bir dizinin elemanlarını yerinde ters çeviren bir metod yazın.
+
+public class Main {
+    public static void main(String[] args) {
+
+        int dizi[] = {1,2,3,4,5};
+        System.out.print("Orijinal dizi: ");
+        diziyazdir(dizi);
+
+        terscevir(dizi);
+
+        System.out.print("Ters Çevrilmiş Dizi: ");
+        diziyazdir(dizi);
+
+    }
+
+    public static void terscevir(int dizi[]){
+        int baslangic =0;
+        int bitis= dizi.length -1;
+
+        while(baslangic < bitis){
+            int temp = dizi[baslangic];
+            dizi[baslangic] = dizi[bitis];
+            dizi[bitis]= temp;
+
+            baslangic ++;
+            bitis --;
+        }
+    }
+
+    public static void diziyazdir(int dizi[]){
+        for (int eleman : dizi) {
+            System.out.print(eleman + " ");
+        }
+        System.out.println();
+    }
+
 }
