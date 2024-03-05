@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 // Dizi Toplamı: Bir tamsayı dizisinin tüm elemanlarının toplamını bulan bir Java metodunu yazın.
 
 /*public class Main{
@@ -58,7 +60,7 @@
 
 //Dizi Ters Çevirme: Bir dizinin elemanlarını yerinde ters çeviren bir metod yazın.
 
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
 
         int dizi[] = {1,2,3,4,5};
@@ -93,4 +95,44 @@ public class Main {
         System.out.println();
     }
 
+}*/
+
+//Dizi Arama: Bir dizide belirli bir elemanı arayan ve indeksini döndüren bir Java fonksiyonu yazın. Eğer eleman bulunamazsa, -1 dönmelidir.
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+
+        System.out.print("Dizinin eleman sayısını girin: ");
+        int n = get.nextInt();
+        int[] dizi= new int[n];
+
+        System.out.print("Dizinin elemanlarını girin: ");
+        for(int i=0; i<n; i++){
+            System.out.print("Eleman "+(i+1) + ": ");
+            dizi[i] = get.nextInt();
+        }
+
+        System.out.print("Aramak istediğiniz elemanı girin: ");
+        int arananEleman = get.nextInt();
+
+        int indeks= diziArama(dizi, arananEleman);
+        if(indeks != -1){
+            System.out.println("Aranan elemanın indeksi: "+ indeks);
+        }else{
+            System.out.println("Aranan eleman bulunamadı.");
+        }
+
+
+    }
+
+    public static int diziArama(int dizi[], int arananEleman){
+        for(int i=0; i<dizi.length; i++){
+            if(dizi[i] == arananEleman){
+                return i; //eleman bulundu indeksi döndür
+            }
+        }
+
+        return -1; //eleman bulunamadı
+    }
 }
