@@ -139,7 +139,7 @@ import java.util.Scanner;
 
 //String Uzunluğu: Verilen bir string'in uzunluğunu, length() metodunu kullanmadan hesaplayan bir metod geliştirin.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get = new Scanner(System.in);
 
@@ -160,5 +160,40 @@ public class Main{
         }
 
         return uzunluk;
+    }
+}*/
+
+//String Ters Çevirme: Bir string'i StringBuilder veya StringBuffer sınıflarını kullanmadan ters çeviren bir Java fonksiyonu yazın.
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Bir kelime ya da cümle yazınız: ");
+        String string = get.nextLine();
+
+        String tersString = terscevir(string);
+
+        System.out.print("Girilen String: "+string+ "\n");
+        System.out.print("Ters String: "+ tersString);
+
+
+    }
+    public static String terscevir(String str){
+        char karakterler[] = str.toCharArray();
+
+        int baslangıc =0;
+        int bitis = karakterler.length - 1;
+
+        while(baslangıc < bitis){
+            char gecici = karakterler[baslangıc];
+            karakterler[baslangıc] = karakterler[bitis];
+            karakterler[bitis]= gecici;
+
+            baslangıc++;
+            bitis --;
+        }
+
+        return new String(karakterler);
     }
 }
