@@ -99,7 +99,7 @@ import java.util.Scanner;
 
 //Dizi Arama: Bir dizide belirli bir elemanı arayan ve indeksini döndüren bir Java fonksiyonu yazın. Eğer eleman bulunamazsa, -1 dönmelidir.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get = new Scanner(System.in);
 
@@ -134,5 +134,31 @@ public class Main{
         }
 
         return -1; //eleman bulunamadı
+    }
+}*/
+
+//String Uzunluğu: Verilen bir string'in uzunluğunu, length() metodunu kullanmadan hesaplayan bir metod geliştirin.
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+
+        System.out.print("Lütfen bir string girin: ");
+        String string = get.nextLine();
+
+        int uzunluk = uzunlukhesapla(string);
+        System.out.print("Girilen stringin uzunluğu: "+ uzunluk);
+
+
+    }
+    public static int uzunlukhesapla (String str){
+        char dizi[] = str.toCharArray();
+        int uzunluk =0;
+
+        for(char karakter: dizi){
+            uzunluk ++;
+        }
+
+        return uzunluk;
     }
 }
