@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 // Dizi Toplamı: Bir tamsayı dizisinin tüm elemanlarının toplamını bulan bir Java metodunu yazın.
@@ -165,7 +166,7 @@ import java.util.Scanner;
 
 //String Ters Çevirme: Bir string'i StringBuilder veya StringBuffer sınıflarını kullanmadan ters çeviren bir Java fonksiyonu yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
 
@@ -196,4 +197,41 @@ public class Main{
 
         return new String(karakterler);
     }
+}*/
+
+// Dizi Birleşimi: İki dizinin birleşimini bulan ve sonucu yeni bir dizi olarak döndüren bir program yazın.
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner get = new Scanner(System.in);
+
+        int dizi1[]= {1,2,3,4,5};
+        int dizi2[]= {6,7,8,9,10};
+
+        int birlesimDizisi[] = birlesikdizi(dizi1,dizi2);
+
+        System.out.print("Dizi 1: "+ Arrays.toString(dizi1)+ "\n");
+        System.out.print("Dizi 2: "+ Arrays.toString(dizi2) +"\n");
+        System.out.print("Birleşik Dizi: "+ Arrays.toString(birlesimDizisi));
+
+    }
+
+    public static int[] birlesikdizi(int dizi1[], int dizi2[]){
+
+        int birlesimUzunluk = dizi1.length + dizi2.length;
+
+        int birlesimDizisi[]= new int[birlesimUzunluk];
+
+        for(int i=0; i<dizi1.length; i++){
+            birlesimDizisi[i]= dizi1[i];
+        }
+
+        for(int i=0; i<dizi2.length; i++){
+            birlesimDizisi[dizi1.length+ i]=dizi2[i];
+        }
+
+        return birlesimDizisi;
+    }
+
+
 }
