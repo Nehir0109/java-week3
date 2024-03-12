@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 // Dizi Toplamı: Bir tamsayı dizisinin tüm elemanlarının toplamını bulan bir Java metodunu yazın.
@@ -201,7 +200,7 @@ import java.util.Scanner;
 
 // Dizi Birleşimi: İki dizinin birleşimini bulan ve sonucu yeni bir dizi olarak döndüren bir program yazın.
 
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get = new Scanner(System.in);
 
@@ -232,6 +231,43 @@ public class Main{
 
         return birlesimDizisi;
     }
+}*/
 
 
+// lokumdaki çarpım tablosu egzersizi
+public class Main{
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+
+        System.out.print("Kaç satır ve sütunluk bir çarpım tablosu istersiniz?: ");
+        int n = get.nextInt();
+
+
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=n; j++){
+                System.out.printf("%5d",(i*j));
+            }
+            System.out.println();
+        }
+
+        System.out.print("Başka bir çarpım tablosu oluşturmak ister misiniz? (Y/N): ");
+        String evethayir= get.next();
+
+
+        if(evethayir.equals("y") || evethayir.equals("Y")){
+            System.out.print("Kaç satır ve sütunluk bir çarpım tablosu istersiniz?: ");
+            n = get.nextInt();
+            for(int i=1; i<=n; i++){
+                for(int j=1; j<=n; j++){
+                    System.out.printf("%5d",(i*j));
+                }
+                System.out.println();
+            }
+        }else if(evethayir.equals("n") || evethayir.equals("N")){
+            System.out.println("Hoşçakalın!");
+        }else{
+            System.out.println("Hata!");
+        }
+
+    }
 }
