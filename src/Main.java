@@ -305,7 +305,7 @@ import java.util.Scanner;
 }*/
 
 //Dizi Döndürme:Bir dizinin elemanlarını sağa belirli bir sayıda pozisyon kaydıran bir metod yazın.
-public class Main {
+/*public class Main {
     public static void main(String[] args) {
         Scanner get = new Scanner(System.in);
         // 1 2 3 4 5      (4 5 1 2 3)     5 4 3 2 1
@@ -332,5 +332,24 @@ public class Main {
         reversearray(array,0,n-1); // 5,4,3,2,1
         reversearray(array, 0, count-1); // 4,5,3,2,1
         reversearray(array, count,n-1); // indeks olarak işlem yapıyoruz : 4,5,1,2,3
+    }
+}*/
+//10: Dizi Maksimumu: Bir tamsayı dizisinin maksimum değerini bulan bir Java fonksiyonu yazın.
+public class Main{
+    public static void main(String[] args) {
+        Scanner get= new Scanner(System.in);
+
+        int[] array = {21,23,45,3,223,446,67,6,7,888,98,90,487,12,2,356};
+        int max= array[0];
+
+        System.out.println("Dizi= "+ Arrays.toString(array));
+
+        for(int i=0; i< array.length;i++){
+            if(array[i]> max){
+                max= array[i];
+            }
+        }
+
+        System.out.println("Dizideki maksimum değer: "+ max);
     }
 }
