@@ -1,5 +1,6 @@
-import java.util.Scanner;
-
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 // Dizi Toplamı: Bir tamsayı dizisinin tüm elemanlarının toplamını bulan bir Java metodunu yazın.
 
 /*public class Main{
@@ -235,7 +236,7 @@ import java.util.Scanner;
 
 
 // lokumdaki çarpım tablosu egzersizi
-public class Main{
+/*public class Main{
     public static void main(String[] args) {
         Scanner get= new Scanner(System.in);
 
@@ -269,5 +270,37 @@ public class Main{
             System.out.println("Hata!");
         }
 
+    }
+}*/
+
+//Dizi kesişimi: İki dizinin kesişimini bulan ve sonucu yeni bir dizi olarak döndüren bir metod yazın.
+public class Main{
+    public static void main(String[] args) {
+        int[] array1 = {1,2,3,4,5};
+        int[] array2 = {1,3,5,7,9};
+
+        int[] array3= kesisim(array1,array2);
+        System.out.println(Arrays.toString(array3));
+        
+    }
+    public static int[] kesisim(int[] array1, int[] array2){
+
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+        for(int num: array1){
+            set1.add(num);
+        }
+        for(int num2: array2){
+            set2.add(num2);
+        }
+        set1.retainAll(set2);
+        int[] kesisim = new int[set1.size()];
+
+        int i=0;
+        for(int num: set1){
+            kesisim[i++]=num;
+        }
+
+        return kesisim;
     }
 }
